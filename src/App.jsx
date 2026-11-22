@@ -4,12 +4,22 @@ import {
   Factory, Phone, Mail, MapPin, MessageCircle, Facebook, Instagram,
   Play, ChevronDown, CheckCircle2
 } from "lucide-react";
+import companyLogo from "./assets/companyLogo.png";
+import brid from './assets/Dek.jpg';
+import fields from './assets/21.jpg.jpeg';
+import sprout from './assets/2.jpg.jpeg';
+import products from './assets/22.jpg.jpeg';
+import poultryFarms from './assets/13.jpg.jpeg';
+import richAnimals from './assets/12.jpg.jpeg';
+import truck from './assets/23.jpg.jpeg';
+
+
 
 const company = {
-  phone: "+963 999 000 000",
-  whatsapp: "963999000000",
-  email: "info@alahram-company.example",
-  address: "سوريا – يرجى إضافة العنوان التفصيلي",
+  phone: "+963944560229",
+  whatsapp: "+963944560229",
+  email: "info@alahram-m.com",
+  address: "سوريا – حلب",
 };
 
 const services = [
@@ -23,40 +33,45 @@ const services = [
     icon: <Bird />,
     title: "تربية أمهات الفروج",
     text: "العناية بأمهات الفروج ضمن منظومة تربية ومتابعة متخصصة.",
-    image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=900&q=85",
+    image: brid,
   },
   {
     icon: <Sprout />,
     title: "إنتاج الصيصان",
     text: "إنتاج الصيصان ضمن دورات إنتاجية منتظمة وبطاقة إنتاجية مميزة.",
-    image: "https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=900&q=85",
+    image: sprout,
   },
   {
     icon: <Truck />,
     title: "الاستيراد والتصدير",
     text: "خدمات استيراد وتصدير المواشي وتوريد الأعلاف إلى مختلف المحافظات السورية.",
-    image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=85",
+    image: truck,
   },
 ];
 
 const gallery = [
-  ["منشآت الإنتاج", "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1000&q=85"],
+  ["منشآت الإنتاج", products],
   ["الأعلاف والحبوب", "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1000&q=85"],
-  ["مزارع الدواجن", "https://images.unsplash.com/photo-1516467508483-a7212fede31a?auto=format&fit=crop&w=1000&q=85"],
-  ["الثروة الحيوانية", "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85"],
+  ["مزارع الدواجن", poultryFarms],
+  ["الثروة الحيوانية", richAnimals],
 ];
+
 
 function Logo({ light = false }) {
   return (
-    <a className={`brand ${light ? "brand-light" : ""}`} href="#home" aria-label="شركة الأهرام">
-      <span className="brand-mark"><span>أ</span></span>
-      <span className="brand-copy">
-        <strong>الأهرام</strong>
-        <small>يوسف ملحم</small>
-      </span>
+    <a
+      className={`brand ${light ? "brand-light" : ""}`}
+      href="#home"
+      aria-label="شركة الأهرام يوسف ملحم"
+    >
+      <img
+        src={companyLogo}
+        alt="شركة الأهرام يوسف ملحم"
+        className="brand-logo-image"
+      />
     </a>
   );
-}
+};
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -113,8 +128,8 @@ function App() {
         <section className="intro section-pad" id="about">
           <div className="container intro-grid">
             <div className="intro-visual">
-              <img className="intro-main" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=85" alt="حقول زراعية خضراء" />
-              <div className="intro-small"><img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=500&q=85" alt="دواجن" /></div>
+              <img className="intro-main" src={fields} />
+              <div className="intro-small"><img src={brid} alt="دواجن" /></div>
               <div className="since-card"><span>تأسست عام</span><strong>2010</strong><small>بداية مسيرة الأهرام</small></div>
             </div>
             <div className="intro-copy">
@@ -135,7 +150,6 @@ function App() {
           <div className="container">
             <div className="section-heading">
               <div><span className="section-kicker">ماذا نقدم؟</span><h2>مجالات عملنا</h2></div>
-              <p>مجموعة من الخدمات والأنشطة التي تغطي جوانب متعددة من قطاع الأعلاف والدواجن والثروة الحيوانية.</p>
             </div>
             <div className="service-grid">
               {services.map((service, index) => (
@@ -159,14 +173,12 @@ function App() {
               <div className="stat"><span className="stat-icon"><Sprout /></span><strong>340 <i>ألف</i></strong><small>صوص في كل دورة (21 يوماً)</small></div>
             </div>
           </div>
-          <div className="numbers-footnote container">* الأرقام المعروضة وفق المعلومات الأولية المقدمة عن الشركة.</div>
         </section>
 
         <section className="gallery section-pad" id="gallery">
           <div className="container">
             <div className="section-heading">
               <div><span className="section-kicker">لمحة من أعمالنا</span><h2>معرض الصور</h2></div>
-              <p>صور توضيحية مؤقتة تعكس طبيعة نشاط الشركة، ويمكن استبدالها بسهولة بالصور الرسمية لاحقاً.</p>
             </div>
             <div className="gallery-grid">
               {gallery.map(([title, image], i) => <div className={`gallery-item gallery-item-${i + 1}`} key={title}>
