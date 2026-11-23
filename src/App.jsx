@@ -6,12 +6,13 @@ import {
 } from "lucide-react";
 import companyLogo from "./assets/companyLogo.png";
 import brid from './assets/Dek.jpg';
-import fields from './assets/21.jpg.jpeg';
+import fields from './assets/21.jpg (1).jpeg';
+import plants from './assets/22.jpg (1).jpeg';
 import sprout from './assets/2.jpg.jpeg';
 import products from './assets/22.jpg.jpeg';
 import poultryFarms from './assets/13.jpg.jpeg';
 import richAnimals from './assets/12.jpg.jpeg';
-import truck from './assets/23.jpg.jpeg';
+import truck from './assets/11.jpg (1).jpeg';
 
 
 
@@ -27,7 +28,7 @@ const services = [
     icon: <Wheat />,
     title: "إنتاج الأعلاف النباتية",
     text: "إنتاج أعلاف نباتية وفق معايير تهدف إلى دعم صحة الدواجن وتحسين جودة التربية.",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85",
+    image: plants,
   },
   {
     icon: <Bird />,
